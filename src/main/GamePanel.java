@@ -33,7 +33,7 @@ public class GamePanel extends JPanel implements Runnable{
     public CollisionChecker cChecker = new CollisionChecker(this);
     public AssetSetter aSetter = new AssetSetter(this);
     public Player player = new Player(this,keyH);
-    public ParentObject obj[] = new ParentObject[10];
+    public ParentObject[] obj = new ParentObject[10];
 
 
     public GamePanel(){
@@ -58,7 +58,7 @@ public class GamePanel extends JPanel implements Runnable{
     @Override
     public void run(){
 
-        double drawInterval = 1000000000/FPS;
+        double drawInterval = 1000000000.0/FPS;
         double delta = 0;
         long lastTime = System.nanoTime();
         long currentTime;
@@ -101,9 +101,9 @@ public class GamePanel extends JPanel implements Runnable{
         Graphics2D g2 = (Graphics2D) g;
 
         tileM.draw(g2);
-        for (int i = 0; i < obj.length; i++){
-            if(obj[i] != null){
-                obj[i].draw(g2,this);
+        for (ParentObject parentObject : obj) {
+            if (parentObject != null) {
+                parentObject.draw(g2, this);
             }
         }
         player.draw(g2);

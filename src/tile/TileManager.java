@@ -67,7 +67,7 @@ public class TileManager {
                 String line = br.readLine();
 
                 while(col < gp.maxWorldCol){
-                    String numbers[] = line.split(" ");
+                    String[] numbers = line.split(" ");
 
                     int num = Integer.parseInt(numbers[col]);
 
@@ -83,7 +83,7 @@ public class TileManager {
             br.close();
 
         }catch(Exception e){
-
+            return;
         }
     }
 

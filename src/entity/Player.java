@@ -99,43 +99,40 @@ public class Player extends Entity{
 
         BufferedImage image = null;
 
-        switch(direction) {
-            case "up":
-                if(spriteNum == 1){
+        switch (direction) {
+            case "up" -> {
+                if (spriteNum == 1) {
                     image = fel1;
                 }
-                if(spriteNum == 2){
+                if (spriteNum == 2) {
                     image = fel2;
                 }
-                break;
-            case "down":
-                if(spriteNum == 1){
+            }
+            case "down" -> {
+                if (spriteNum == 1) {
                     image = le1;
                 }
-                if(spriteNum == 2){
+                if (spriteNum == 2) {
                     image = le2;
                 }
-                break;
-            case "right":
-                if(spriteNum == 1){
+            }
+            case "right" -> {
+                if (spriteNum == 1) {
                     image = jobb1;
                 }
-                if(spriteNum == 2){
+                if (spriteNum == 2) {
                     image = jobb2;
                 }
-                break;
-            case "left":
-                if(spriteNum == 1){
+            }
+            case "left" -> {
+                if (spriteNum == 1) {
                     image = bal1;
                 }
-                if(spriteNum == 2){
+                if (spriteNum == 2) {
                     image = bal2;
                 }
-                break;
-            default:
-                image = alap;
-                break;
-
+            }
+            default -> image = alap;
         }
 
         g2.drawImage(image, screenX, screenY, gp.tileSize, gp.tileSize, null);
